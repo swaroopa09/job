@@ -71,9 +71,9 @@ const JobForm = () => {
                 <Form.Control type="text" name="companyName" placeholder="Enter Company Name" value={formData.companyName} onChange={handleChange} />
               </Form.Group>
 
-              <Form.Group className="job-form-group" controlId="interviewDateTime">
+              <Form.Group className="job-form-group date-time-group" controlId="interviewDateTime">
                 <Form.Label>Interview Date & Time</Form.Label>
-                <Form.Control type="datetime-local" name="interviewDateTime" value={formData.interviewDateTime} onChange={handleChange} />
+                <Form.Control type="datetime-local" name="interviewDateTime" value={formData.interviewDateTime} onChange={handleChange} className="date-time-input" />
               </Form.Group>
 
               <Form.Group className="job-form-group job-full-width" controlId="description">
