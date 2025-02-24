@@ -6,7 +6,7 @@
 
 .job-add-button {
   position: fixed;
-  top: 50px;
+  top: 30px;
   right: 20px;
   z-index: 1100;  
 }
@@ -148,24 +148,33 @@
     grid-template-columns: 1fr; /* Ensures one field per row */
   }
 
-
   .job-form-group {
     flex-direction: row; /* Keep label and input in the same row */
     align-items: center;
     justify-content: space-between;
     width: 100%;
+    flex-wrap: wrap; /* Allow wrapping of content */
+    margin-bottom: 15px; /* Add spacing for clarity */
   }
 
   .job-form-group label {
-    flex: 0.4; /* Labels take 40% width */
+    flex: 1; /* Label takes up equal width as input */
     text-align: left;
     font-weight: bold;
     white-space: nowrap; /* Prevents labels from wrapping */
+    padding-right: 10px; /* Optional: spacing between label and input */
   }
 
   .job-form-group input,
   .job-form-group textarea {
-    flex: 0.6; /* Inputs take 60% width */
+    flex: 1; /* Input takes up equal width as label */
+    max-width: 100%;
+    box-sizing: border-box; /* Include padding and borders in the width calculation */
+  }
+
+  .job-form-group input[type="datetime-local"] {
+    width: 100%; /* Ensure the Date & Time input stretches to fit */
+    max-width: 100%;
   }
 
   .job-form-buttons {
@@ -178,8 +187,7 @@
   .job-form-buttons button {
     flex: 1; /* Makes both buttons equal width */
   }
-}
-@media (max-width: 768px) {
+
   .job-list {
     grid-template-columns: 1fr; /* Single column on mobile */
   }
